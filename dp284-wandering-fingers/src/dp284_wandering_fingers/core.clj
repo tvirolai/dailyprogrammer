@@ -1,7 +1,7 @@
 (ns dp284-wandering-fingers.core
   (:require [clojure.string :as s]))
 
-(def dict (->> (slurp "./enable1.txt")
+(def dict (->> (slurp "./data/enable1.txt")
                (#(s/split % #"\r\n"))
                (filter #(>= (count %) 5))))
 
