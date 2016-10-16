@@ -2,11 +2,11 @@
   (:require [clojure.string :as s]))
 
 (defn largest-digit [n]
-  (->> n
+  (-> n
        (str)
        (sort)
        (last)
-       (#(Character/digit % 10))))
+       (Character/digit 10)))
 
 (defn padding [n]
   (let [se (seq (str n))]
@@ -26,7 +26,9 @@
     (loop [res n i 0]
       (if (= 6174 res)
         i
-        (recur (- (sort-digits res true) (sort-digits res false)) (inc i))))))
+        (recur 
+          (- (sort-digits res true) (sort-digits res false)) 
+          (inc i))))))
 
 (defn -main []
   (for [x [6589 5455 6174]]
