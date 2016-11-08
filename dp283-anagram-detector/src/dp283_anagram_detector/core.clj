@@ -22,4 +22,4 @@
       (println 
         (str "\"" (first x)  
              "\"" answer " an anagram of \"" 
-             (last x) "\"")))))
+             last x) "\""))))
